@@ -1,0 +1,12 @@
+import hashlib
+import base58
+
+def create_peer_did(pub_key_hex):
+    # Simplified Peer DID Method 2
+    multicodec_key = b'\x12\x20' + hashlib.sha256(bytes.fromhex(pub_key_hex)).digest()
+    encoded_key = base58.encode(multicodec_key)
+    return f"did:peer:2.Vz{encoded_key}"
+
+def update_did(old_did, new_pub_key_hex):
+    # Simple rotation: create new DID
+    return create_peer_did(new_pub_key_hex)  # In prod, link via VC
