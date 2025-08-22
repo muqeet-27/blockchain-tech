@@ -648,24 +648,6 @@ def render_sidebar():
         else:
             st.error("❌ Database Offline")
 
-        if not PYMONGO_AVAILABLE:
-            st.error("Install PyMongo")
-            st.code("pip install pymongo")
-
-        # Configuration Details
-        with st.expander("⚙️ Configuration", expanded=False):
-            st.text("Connection:")
-            st.code(Config.get_masked_connection())
-
-            if Config.DEBUG_MODE:
-                st.warning("🐛 Debug mode enabled")
-
-            config_issues = Config.validate_config()
-            if config_issues:
-                st.warning("Issues found:")
-                for issue in config_issues:
-                    st.text(f"• {issue}")
-
 def render_registration():
     """Registration with environment-secured database"""
     st.header("👤 User Registration")
