@@ -1,4 +1,4 @@
-# 🔗 Blockchain-Tech  
+# 🔗 Decentralized identity & Login system (DID + ZKP)  
 
 ## 📖 Overview  
 This project is a **cloud-ready, environment-secured decentralized identity management system**.  
